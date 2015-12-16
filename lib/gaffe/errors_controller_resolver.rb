@@ -30,7 +30,7 @@ module Gaffe
   private
 
     def request_controller(controllers)
-      controllers.find { |pattern, _| @env['REQUEST_URI'] =~ pattern }.try(:last)
+      controllers.find { |pattern, _| @env['PATH_INFO'] =~ pattern }.try(:last)
     end
   end
 end
